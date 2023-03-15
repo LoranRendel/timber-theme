@@ -2,7 +2,6 @@
   "name": "loranrendel/timber-theme",
   "description": "Starter theme to build a Timber theme",
   "type": "wordpress-theme",
-  "minimum-stability": "stable",
   "authors": [
     {
       "email": "jared@upstatement.com",
