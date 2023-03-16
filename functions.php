@@ -13,10 +13,8 @@
  * to load your dependencies and initialize Timber. If you are using Timber via the WordPress.org
  * plug-in, you can safely delete this block.
  */
-$composer_autoload = __DIR__ . '/vendor/autoload.php';
-if ( file_exists( $composer_autoload ) ) {
-	require_once $composer_autoload;
-	$timber = new Timber\Timber();
+if (class_exists('Timber\Timber')) {
+    $timber = new Timber\Timber();
 }
 
 /**
@@ -78,12 +76,9 @@ class StarterSite extends Timber\Site {
 
 	/** This is where you add some context
 	 *
-	 * @param string $context context['this'] Being the Twig's {{ this }}.
+	 * @param array $context context['this'] Being the Twig's {{ this }}.
 	 */
 	public function add_to_context( $context ) {
-		$context['foo']   = 'bar';
-		$context['stuff'] = 'I am a value set in your functions.php file';
-		$context['notes'] = 'These values are available everytime you call Timber::context();';
 		$context['menu']  = new Timber\Menu();
 		$context['site']  = $this;
 		return $context;
