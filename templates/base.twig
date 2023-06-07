@@ -1,6 +1,6 @@
 {% block html_head_container %}
 <!doctype html>
-<html class="no-js no-svg" {{ site.language_attributes }}>
+<html class="no-js no-svg" {{ site.language_attributes|raw }}>
 {% include 'html-header.twig' %}
 	<head>
 	{% block head %}
