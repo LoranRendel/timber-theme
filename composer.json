@@ -28,6 +28,7 @@
         "automattic/wordbless"
       ]
     },
+    "installer-name": "timber",
     "wordpress-install-dir": "wordpress"
   },
   "config": {
