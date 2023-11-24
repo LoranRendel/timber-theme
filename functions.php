@@ -18,7 +18,10 @@ Timber::$dirname = [ 'templates', 'views' ];
  * By default, Timber does NOT autoescape values. Want to enable Twig's autoescape?
  * No prob! Just set this value to true
  */
-Timber::$autoescape = true; // to follow normal Twig behaviour!
+add_filter('timber/twig/environment/options', function ($options) {
+	$options['autoescape'] = true; // to follow default Twig behaviour
+	return $options;
+});
 
 /**
  * We're going to configure our theme inside of a subclass of Timber\Site
