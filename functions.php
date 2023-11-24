@@ -18,7 +18,7 @@ Timber::$dirname = [ 'templates', 'views' ];
  * By default, Timber does NOT autoescape values. Want to enable Twig's autoescape?
  * No prob! Just set this value to true
  */
-Timber::$autoescape = false;
+Timber::$autoescape = true; // to follow normal Twig behaviour!
 
 /**
  * We're going to configure our theme inside of a subclass of Timber\Site
@@ -45,12 +45,9 @@ class StarterSite extends Timber\Site {
 
 	/** This is where you add some context
 	 *
-	 * @param string $context context['this'] Being the Twig's {{ this }}.
+	 * @param array $context context['this'] Being the Twig's {{ this }}.
 	 */
 	public function add_to_context( $context ) {
-		$context['foo']   = 'bar';
-		$context['stuff'] = 'I am a value set in your functions.php file';
-		$context['notes'] = 'These values are available everytime you call Timber::context();';
 		$context['menu']  = Timber::get_menu();
 		$context['site']  = $this;
 		return $context;
