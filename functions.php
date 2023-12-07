@@ -15,12 +15,3 @@ Timber\Timber::init();
 Timber::$dirname = [ 'templates', 'views' ];
 
 new StarterSite();
-
-/**
- * By default, Timber does NOT autoescape values. Want to enable Twig's autoescape?
- * No prob! Just set this value to true
- */
-add_filter('timber/twig/environment/options', function ($options) {
-	$options['autoescape'] = true; // to follow default Twig behaviour
-	return $options;
-});
