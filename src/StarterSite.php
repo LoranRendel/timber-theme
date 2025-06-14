@@ -23,13 +23,13 @@ class StarterSite extends Site {
 	 * StarterSite constructor.
 	 */
 	public function __construct() {
-		add_action( 'after_setup_theme', [ $this, 'theme_supports' ] );
-		add_action( 'init', [ $this, 'register_post_types' ] );
-		add_action( 'init', [ $this, 'register_taxonomies' ] );
+//		add_action( 'after_setup_theme', [ $this, 'theme_supports' ] );
+//		add_action( 'init', [ $this, 'register_post_types' ] );
+//		add_action( 'init', [ $this, 'register_taxonomies' ] );
 
-		add_filter( 'timber/context', [ $this, 'add_to_context' ] );
-		add_filter( 'timber/twig/filters', [ $this, 'add_filters_to_twig' ] );
-		add_filter( 'timber/twig/functions', [ $this, 'add_functions_to_twig' ] );
+//		add_filter( 'timber/context', [ $this, 'add_to_context' ] );
+//		add_filter( 'timber/twig/filters', [ $this, 'add_filters_to_twig' ] );
+//		add_filter( 'timber/twig/functions', [ $this, 'add_functions_to_twig' ] );
 		add_filter( 'timber/twig/environment/options', [ $this, 'update_twig_environment_options' ] );
 
 		parent::__construct();
